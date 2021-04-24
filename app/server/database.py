@@ -1,7 +1,8 @@
 import motor.motor_asyncio
 from bson.objectid import ObjectId
+from decouple import config
 
-MONGO_DETAILS = "mongodb+srv://kpj_mongo_admin:<password>@api-serving.knab2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MONGO_DETAILS = config('MONGO_DETAILS')
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
