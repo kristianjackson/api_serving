@@ -45,7 +45,7 @@ async def update_student_data(id: str, req: UpdateStudentModel = Body(...)):
     updated_student = await update_student(id, req)
     if updated_student:
         return ResponseModel(
-            "Student with ID: {} name update is successful".format(id),
+            "Student with ID: {} update is successful".format(id),
             "Student name updated successfully",
         )
     return ErrorResponseModel(
