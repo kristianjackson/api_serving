@@ -10,7 +10,7 @@ app.include_router(StudentRouter, tags=["Student"], prefix='/student')
 async def read_root():
     return{"message": "Welcome to this fantastic app!"}
 
-@app.post('/diamond')
+@app.post('/diamond', tags=["Diamond Prices"])
 def predict_diamond(caret_weight, cut, color, clarity, polish, symmetry, report):
     data = pd.Dataframe([[caret_weight, cut, color, clarity, polish, symmetry, report]])
     data.columns = ['Caret Weight', 'Cut', 'Color', 'Clarity', 'Polish', 'Symmetry', 'Report']
